@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, -apple-system, BlinkMacSystemFont, serif;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    min-height: 100vh;
+    padding: 20px;
+    color: #2d3748;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+.header {
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-family: Cambria, serif;
+    font-size: 2.8em;
+    font-weight: 800;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content {
+    padding: 40px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group button {
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+input[type="number"], input[type="text"], select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    background: #f8fafc;
+}
+
+input[type="number"]:focus, input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: #3182ce;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.btn {
+    background: linear-gradient(135deg, #3182ce, #2c5282);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.person-card {
+    background: linear-gradient(135deg, #2d3748, #1a202c);
+    color: white;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.expense-input {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.expense-input input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+}
+
+.expense-list {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 12px;
+}
+
+.expense-item {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 24px;
+    display: inline-block;
+    margin: 4px;
+    font-size: 0.95em;
+    backdrop-filter: blur(5px);
+}
+
+.results {
+    background: linear-gradient(135deg, #f6f9fc, #edf2f7);
+    border-radius: 16px;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.settlement-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.summary {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.owes {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.gets-back {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+.summary-item {
+    display: inline-block;
+    margin: 0 15px;
+    font-weight: 600;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #1a202c;
+    color: #e2e8f0;
+}
+
+.dark-mode .container {
+    background: #2d3748;
+}
+
+.dark-mode .header {
+    background: linear-gradient(135deg, #1a202c, #2d3748);
+}
+
+.dark-mode label {
+    color: #e2e8f0;
+}
+
+.dark-mode input[type="number"], .dark-mode input[type="text"], .dark-mode select {
+    background: #4a5568;
+    border-color: #718096;
+    color: #e2e8f0;
+}
+
+.dark-mode input[type="number"]:focus, .dark-mode input[type="text"]:focus, .dark-mode select:focus {
+    border-color: #63b3ed;
+    background: #2d3748;
+}
+
+.dark-mode .results {
+    background: #1a202c;
+}
+
+.dark-mode .settlement-item, .dark-mode .summary {
+    background: #2d3748;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .expense-input {
+        flex-direction: column;
+    }
+    
+    .btn-secondary {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

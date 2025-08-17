@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Expense Splitter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1>💰 Group Expense Splitter</h1>
+                <p>Split shared expenses fairly among friends and family</p>
+            </div>
+            <button id="theme-toggle" class="btn">Toggle Theme</button>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <div class="form-group">
+                    <label for="groupName">Create a New Group</label>
+                    <input type="text" id="groupName" placeholder="Enter group name">
+                    <button class="btn" onclick="createGroup()">Create Group</button>
+                </div>
+                <div class="form-group">
+                    <label for="groupSelector">Select a Group</label>
+                    <select id="groupSelector" onchange="selectGroup()"></select>
+                </div>
+            </div>
+
+            <div id="group-content" class="hidden">
+                <div class="section">
+                    <div class="form-group">
+                        <label for="currency">Select Currency</label>
+                        <select id="currency" onchange="updateCurrency()">
+                            <option value="৳">BDT (৳)</option>
+                            <option value="$">USD ($)</option>
+                            <option value="€">EUR (€)</option>
+                            <option value="£">GBP (£)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="numPersons">How many people are splitting expenses?</label>
+                        <input type="number" id="numPersons" min="2" max="20" placeholder="Enter number of people">
+                        <button class="btn" onclick="setupNames()">Continue</button>
+                    </div>
+                </div>
+
+                <div id="namesSection" class="section hidden">
+                    <h2>Enter Names</h2>
+                    <div id="namesContainer"></div>
+                    <button class="btn" onclick="proceedToExpenses()">Continue to Expenses</button>
+                </div>
+
+                <div id="peopleSection" class="section hidden">
+                    <h2>Enter Expenses for Each Person</h2>
+                    <div id="peopleContainer"></div>
+                    <button class="btn" onclick="calculateSplit()">Calculate Split</button>
+                    <button class="btn btn-secondary" onclick="reset()">Reset All</button>
+                </div>
+
+                <div id="resultsSection" class="section hidden">
+                    <div class="results">
+                        <h2>🧮 Final Settlement</h2>
+                        <div id="summary" class="summary"></div>
+                        <div id="settlements"></div>
+                        <div class="chart-container">
+                            <canvas id="expenseChart"></canvas>
+                        </div>
+                        <div class="export-buttons">
+                            <button class="btn" onclick="exportToCSV()">Export to CSV</button>
+                            <button class="btn" onclick="exportToPDF()">Export to PDF</button>
+                            <button class="btn" onclick="settlementSuggestions()">Settlement Suggestions</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Style.js"></script>
+</body>
+</html>
