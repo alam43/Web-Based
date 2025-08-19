@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(php:*)",
+      "Bash(chmod:*)",
+      "Bash(dir)",
+      "Bash(\"2-RUN-PROJECT.bat\")",
+      "Bash(cmd /c:*)",
+      "Bash(if [ -f \"C:/xampp/xampp-control.exe\" ])",
+      "Bash(then echo \"XAMPP is installed\")",
+      "Bash(else echo \"XAMPP is not installed\")",
+      "Bash(fi)",
+      "Bash(if [ -f \"C:/xampp/htdocs/group-expense-manager/index.html\" ])",
+      "Bash(then echo \"Project files are in place\")",
+      "Bash(else echo \"Project files need to be copied\")",
+      "Bash(apache_start.bat)",
+      "Bash(powershell:*)",
+      "Bash(timeout:*)",
+      "Bash(\"C:/xampp/mysql/bin/mysql.exe\":*)",
+      "Bash(start \"\" \"http://localhost/group-expense-manager/\")",
+      "Bash(cp:*)",
+      "Bash(curl:*)",
+      "Bash(start \"\" \"http://localhost/group-expense-manager/history.html\")",
+      "Bash(rmdir:*)",
+      "Bash(rm:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "additionalDirectories": [
+      "C:\\xampp"
+    ]
+  }
+}

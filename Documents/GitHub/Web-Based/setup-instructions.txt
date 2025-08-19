@@ -1,0 +1,53 @@
+SETUP INSTRUCTIONS FOR GROUP EXPENSE MANAGER
+=============================================
+
+OPTION 1: Using XAMPP (Recommended)
+-----------------------------------
+1. Download and install XAMPP from https://www.apachefriends.org/
+2. Start Apache and MySQL services from XAMPP Control Panel
+3. Copy the Web-Based folder to C:\xampp\htdocs\
+4. Open browser and go to http://localhost/phpmyadmin
+5. Create database named 'group_expense_manager'
+6. Import database.sql file
+7. Open http://localhost/Web-Based/
+
+OPTION 2: Using WAMP
+-------------------
+1. Download and install WAMP from http://www.wampserver.com/
+2. Start WAMP services
+3. Copy Web-Based folder to C:\wamp64\www\
+4. Access http://localhost/phpmyadmin
+5. Create database and import schema
+6. Open http://localhost/Web-Based/
+
+OPTION 3: Using Built-in PHP Server (for testing)
+------------------------------------------------
+1. Install PHP and MySQL separately
+2. Navigate to project directory in command prompt
+3. Run: php -S localhost:8000
+4. Set up MySQL database separately
+5. Access http://localhost:8000
+
+DATABASE CONFIGURATION
+----------------------
+1. Edit api/config.php if needed:
+   - $servername = "localhost";
+   - $username = "root";
+   - $password = ""; (usually empty for local development)
+   - $dbname = "group_expense_manager";
+
+TROUBLESHOOTING
+--------------
+- Ensure PHP extension php_pdo_mysql is enabled
+- Check that Apache and MySQL are running
+- Verify database connection credentials
+- Check file permissions if on Linux/Mac
+
+TESTING THE APPLICATION
+----------------------
+1. Create a new event
+2. Add at least 2 members
+3. Enter contributions for each member
+4. Calculate expenses
+5. View charts and save event
+6. Check history page for saved events

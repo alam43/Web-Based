@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event History - Group Expense Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Group Expense Manager</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="history.html" class="active">History</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="history">
+            <h2>Event History</h2>
+            <div class="filter-controls">
+                <select id="currencyFilter">
+                    <option value="">All Currencies</option>
+                    <option value="USD">USD ($)</option>
+                    <option value="BDT">BDT (৳)</option>
+                    <option value="AED">AED (د.إ)</option>
+                    <option value="GBP">GBP (£)</option>
+                </select>
+                <input type="date" id="dateFilter">
+                <button onclick="filterEvents()">Filter</button>
+                <button onclick="clearFilters()">Clear Filters</button>
+            </div>
+            <div class="events-list" id="eventsList">
+                <div class="loading">Loading events...</div>
+            </div>
+        </section>
+
+        <div id="eventModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/history.js"></script>
+</body>
+</html>

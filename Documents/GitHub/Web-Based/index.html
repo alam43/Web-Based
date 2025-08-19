@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Expense Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Group Expense Manager</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="history.html">History</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="create-event">
+            <h2>Create New Event</h2>
+            <form id="eventForm">
+                <div class="form-group">
+                    <label for="eventName">Event Name:</label>
+                    <input type="text" id="eventName" name="eventName" required>
+                </div>
+                <div class="form-group">
+                    <label for="currency">Currency:</label>
+                    <select id="currency" name="currency" required>
+                        <option value="USD">USD ($)</option>
+                        <option value="BDT">BDT (৳)</option>
+                        <option value="AED">AED (د.إ)</option>
+                        <option value="GBP">GBP (£)</option>
+                    </select>
+                </div>
+                <button type="submit">Create Event</button>
+            </form>
+        </section>
+
+        <section class="group-management" id="groupSection" style="display: none;">
+            <h2>Manage Group Members</h2>
+            <div class="member-input">
+                <input type="text" id="memberName" placeholder="Enter member name">
+                <button onclick="addMember()">Add Member</button>
+            </div>
+            <div class="members-list" id="membersList">
+                <h3>Members:</h3>
+                <ul id="membersUL"></ul>
+            </div>
+            <div class="member-count">
+                <span id="memberCount">0</span> members (Min: 2, Max: 30)
+            </div>
+        </section>
+
+        <section class="contributions" id="contributionsSection" style="display: none;">
+            <h2>Member Contributions</h2>
+            <div id="contributionsForm"></div>
+            <button onclick="calculateExpenses()" id="calculateBtn" style="display: none;">Calculate Expenses</button>
+        </section>
+
+        <section class="results" id="resultsSection" style="display: none;">
+            <h2>Expense Calculation Results</h2>
+            <div class="summary">
+                <div class="total-amount">
+                    <h3>Total Amount: <span id="totalAmount"></span></h3>
+                </div>
+                <div class="average-amount">
+                    <h3>Average per Person: <span id="averageAmount"></span></h3>
+                </div>
+            </div>
+            <div class="settlements">
+                <div class="payers">
+                    <h3>Who Should Pay More:</h3>
+                    <ul id="payersList"></ul>
+                </div>
+                <div class="receivers">
+                    <h3>Who Should Receive:</h3>
+                    <ul id="receiversList"></ul>
+                </div>
+            </div>
+            <div class="chart-controls">
+                <button onclick="showChart('pie')">Show Pie Chart</button>
+                <button onclick="showChart('bar')">Show Bar Chart</button>
+            </div>
+            <div class="chart-container">
+                <canvas id="expenseChart" width="400" height="200"></canvas>
+            </div>
+            <button onclick="saveEvent()" class="save-btn">Save Event</button>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
